@@ -17,6 +17,6 @@ namespace Final_Project.Models {
 
         [Required]
         [MinLength(1)]
-        public string Game { get; set; }        
+        public string Game { get; set; }
     }
 }

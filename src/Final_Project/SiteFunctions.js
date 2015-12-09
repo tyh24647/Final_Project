@@ -1,5 +1,4 @@
-﻿
-var siteURL = "http://localhost:50785/";
+﻿var siteURL = "http://localhost:50785/";
 
 function forcePushFunc() {
     $.ajax(siteURL, {
@@ -13,7 +12,6 @@ function forcePushFunc() {
     });
 }
 
-
 function forceGetFunc() {
     $.ajax(siteURL, {
         Method: "GET",
@@ -21,9 +19,7 @@ function forceGetFunc() {
     })
 }
 
-
 function handleServerEvent(data, data2, data3) {
     var resultsDiv = document.getElementById("results");
     resultsDiv.textContent = JSON.stringify(data);
 }
-

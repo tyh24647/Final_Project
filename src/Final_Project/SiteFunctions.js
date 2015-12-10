@@ -1,6 +1,6 @@
 ﻿var serverAddr = "http://localhost:50785/halo";
 
-function addPlayerToDatabase() {
+function addPlayer() {
     $.ajax(serverAddr, {
         method: "POST",
         processData: false,
@@ -27,7 +27,7 @@ function deletePlayer() {
     });
 }
 
-function getDatabaseData() {
+function getData() {
     var tmpURL = serverAddr;
     var nameTxt = document.getElementById('name').value;
     if (nameTxt != "") { tmpURL += "/" + nameTxt; }
@@ -38,11 +38,11 @@ function getDatabaseData() {
     });
 }
 
-function editPlayerInfo() {
+function editPlayer() {
     $.ajax(serverAddr + "/" + document.getElementById('name').value, {
         method: "PATCH",
         contentType: "application/json",
-        //processData: false,
+        processData: false,
         success: handleServerEvent,
         error: displayErrMsg,
         data: JSON.stringify({

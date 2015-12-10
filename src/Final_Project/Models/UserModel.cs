@@ -1,22 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Security.Claims;
+using System.ComponentModel.DataAnnotations;
 
 namespace Final_Project.Models {
     public class UserModel {
+        [Required]
+        [MinLength(1)]
+        public string Username { get; set; }
 
         [Required]
         [MinLength(1)]
-        public string Name { get; set; }
-
-        [Required]
-        [MinLength(1)]
-        public string Character { get; set; }
-        
-        [Required]
-        [MinLength(1)]
-        public string Weapon { get; set; }
-
-        [Required]
-        [MinLength(1)]
-        public string Game { get; set; }
-    }
+        public string Password { get; set; }
+    } 
 }

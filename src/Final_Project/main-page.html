@@ -3,22 +3,36 @@
 <head>
     <meta charset="utf-8" />
     <title>Final Project - Tyler Hostager</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <link rel="stylesheet" type="text/css" href="PageStyles.css" />
-    <script src="SiteFunctions.js" type="text/javascript"></script>
+    <script src="siteFunctions.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="site-wrapper">
-        <div id="header">
-            <div id="header-text"></div>
+        <div id="top-bar">
+            <div id="header">
+                <div id="header-text"></div>
+            </div>
         </div>
         <div id="site-content">
-            <form id="buttons">
-                <input type="submit" id="name" />
-                <input type="submit" id="preference" />
-                <input type="button" id="submit" onclick="forcePushFunc()" />
-            </form>
-            <div id="main-text"></div>
+            <div id="user-input">
+                <div id="fields">
+                    <form id="text-input">
+                        Name: <input type="text" id="name" /><br />
+                        Character: <input type="text" id="character" /><br />
+                        Favorite weapon: <input type="text" id="weapon" /><br />
+                        Favorite game:<input type="text" id="game" /><br />
+                    </form>
+                </div>
+                <br /><br />
+                <div id="buttons">
+                    <input type="button" id="post-button" value="Add player" onclick="addPlayerToDatabase()" />
+                    <input type="button" id="get-button" value="Get player(s)" onclick="getDatabaseData()" />
+                    <input type="button" id="patch-button" value="Edit existing player" onclick="editPlayerInfo()" />
+                    <input type="button" id="delete-button" value="Delete existing player" onclick="deletePlayer()" /><br />
+                </div>
+            </div>
+            <br /><br />
             <div id="results"></div>
         </div>
         <div id="footer"></div>

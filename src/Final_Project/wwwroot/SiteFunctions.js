@@ -1,12 +1,11 @@
-﻿//var serverAddr = "http://tyhostager-final-project.azurewebsites.net/halo";
-var serverAddr = "http://localhost:50785/halo";
-var eTag = "";
+﻿var serverAddr = "http://tyhostager-final-project.azurewebsites.net/halo";
 
 function addPlayer() {
-    //$.ajax(serverAddr, {
-        //method: "POST",
-    $.ajax(serverAddr + "/" + document.getElementById('name').value, {
-        method: "PUT",
+    $.ajax(serverAddr, {
+        method: "POST",
+        processData: false,
+    //$.ajax(serverAddr + "/" + document.getElementById('name').value, {
+        //method: "PUT",
         contentType: 'application/json',
         success: handleServerEvent,
         error: displayErrMsg,

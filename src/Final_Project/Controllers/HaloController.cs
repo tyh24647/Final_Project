@@ -16,7 +16,6 @@ namespace Final_Project.Controllers {
     [TypeFilter(typeof(AuthorizationFilter))]
     [TypeFilter(typeof(ExceptionHandlerFilter))]
     public class HaloController : Controller {
-
         private IPlayersDatabase database;
 
         //private ISecurityProvider security;

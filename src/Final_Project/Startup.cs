@@ -7,7 +7,6 @@ using Final_Project.Models;
 
 namespace Final_Project {
     public class Startup {
-
         public Startup(IHostingEnvironment env) { }
 
         public void ConfigureServices(IServiceCollection services) {

@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Final_Project.Models {
     public class PlayerModel {
-
         public DateTime Updated { get; private set; }
         
         public void SetUpdated() {
@@ -13,7 +12,6 @@ namespace Final_Project.Models {
         public string ETag {
             get {
                 return "\"" + Updated.ToLongTimeString() + "\"";
-                //return "\"" + this.Name + ":" + Updated.ToLongTimeString() + "\"";
             }
         }
 

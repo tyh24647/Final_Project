@@ -11,20 +11,30 @@
     <div id="site-wrapper">
         <div id="top-bar">
             <div id="header">
-                <div id="header-text"></div>
+                <div id="header-text">Halo</div>
             </div>
         </div>
         <div id="site-content">
+            <div id="background">
+                <img id="image" src="http://images8.alphacoders.com/609/609825.jpg" />
+            </div>
             <div id="user-input">
                 <div id="fields">
+                    <form id="login-info">
+                        Username: <input type="text" id="username" /><br /><br />
+                        Password: <input type="password" id="password" /><br /><br />
+                    </form>
                     <form id="text-input">
-                        Name: <input type="text" id="name" /><br />
-                        Character: <input type="text" id="character" /><br />
-                        Favorite weapon: <input type="text" id="weapon" /><br />
-                        Favorite game:<input type="text" id="game" /><br />
+                        Name: <input type="text" id="name" /><br /><br />
+                        Character: <input type="text" id="character" /><br /><br />
+                        Favorite weapon: <input type="text" id="weapon" /><br /><br />
+                        Favorite game:<input type="text" id="game" /><br /><br />
                     </form>
                 </div>
                 <br /><br />
+                <div id="login-buttons">
+                    <input type="button" id="Login" value="Log In" onclick="loginUser()" />
+                </div>
                 <div id="buttons">
                     <input type="button" id="post-button" value="Add player" onclick="addPlayer()" />
                     <input type="button" id="get-button" value="Get player(s)" onclick="getData()" />

@@ -16,31 +16,21 @@ namespace Final_Project.Controllers {
     public class LoginController : Controller {
 
         private UsersModel users;
-        //private UsersModel users = new UsersModel();
-        //private IPlayersDatabase database;
 
         private ISecurityProvider security;
-
-        /*
-        public LoginController(ISecurityProvider security) {
-            this.security = security;
-        }
-        */
-
-        ///*
+        
         public LoginController(UsersModel users, ISecurityProvider security) {
             this.users = users;
             this.security = security;
         }
-        //*/
-
+        
         [HttpPost]
         public IActionResult Post([FromBody]UserModel user) {
             if (users.All.ContainsKey(user.Username)) {
                 return new HttpStatusCodeResult((int)HttpStatusCode.NotFound);
             } else if (users.All[user.Username].Password.Equals(user.Password)) {
                 var claims = new List<Claim>();
-                claims.Add(new Claim("Username", user.Username));
+                claims.Add(new Claim("username", user.Username));
                 Token token = new Token() { token = security.GetToken(claims) };
                 return new JsonResult(token);
             }

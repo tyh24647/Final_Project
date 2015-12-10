@@ -1,11 +1,11 @@
-﻿var serverAddr = "http://tyhostager-final-project.azurewebsites.net/halo";
+﻿//var serverAddr = "http://tyhostager-final-project.azurewebsites.net/halo";
+var serverAddr = "http://localhost:50785/halo";
+var loginAddr = "http://localhost:50785/login";
 
 function addPlayer() {
     $.ajax(serverAddr, {
         method: "POST",
         processData: false,
-    //$.ajax(serverAddr + "/" + document.getElementById('name').value, {
-        //method: "PUT",
         contentType: 'application/json',
         success: handleServerEvent,
         error: displayErrMsg,
@@ -17,6 +17,27 @@ function addPlayer() {
         })
     });
 }
+
+/*
+function loginUser() {
+    $.ajax(loginAddr, {
+        method: "POST",
+        processData: false,
+        contentType: "application/json",
+        success: handleServerEvent,
+        error: displayErrMsg,
+        data: JSON.stringify({
+            Username: document.getElementById('username').value,
+            Password: document.getElementById('password').value
+        })
+    })
+
+    document.getElementById('buttons').style.visibility = 'visible';
+    document.getElementById('text-input').style.visibility = 'visible';
+    document.getElementById('login-buttons').style.visibility = 'hidden';
+    document.getElementById('login-info').style.visibility = 'hidden';
+}
+*/
 
 function deletePlayer() {
     var nameTxt = document.getElementById('name').value;
@@ -75,10 +96,14 @@ function resetTextFields() {
     var characterTF = document.getElementById('character');
     var weaponTF = document.getElementById('weapon');
     var gameTF = document.getElementById('game');
+    var usernameTF = document.getElementById('username');
+    var passwordTF = document.getElementById('password');
     clearTextField(nameTF);
     clearTextField(characterTF);
     clearTextField(weaponTF);
     clearTextField(gameTF);
+    clearTextField(usernameTF);
+    clearTextField(passwordTF);
 }
 
 function clearTextField(textField) {

@@ -97,11 +97,17 @@ namespace Final_Project.Controllers {
         public PlayerModel Post([FromBody]PlayerModel player) {
             
             ///*
-            var model = database.Add(player); 
+            var model = database.Add(player);
+            if (model == null) {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return new PlayerModel();
+            }
+            /*
             if (player == null) {
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return new PlayerModel();
             }
+            */
 
             /*// TEST
             var ifMatch = Request.Headers.Get("if-match");

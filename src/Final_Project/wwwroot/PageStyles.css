@@ -38,6 +38,7 @@
     top: 160px;
     left:200px;
     z-index:30;
+    height:20%;
 }
 
 #login-buttons {
@@ -59,6 +60,12 @@
 #background {
     position:center;
     height:800px;
+    width:auto;
+}
+
+#spacer {
+    height:100px;
+    position:absolute;
     width:auto;
 }
 

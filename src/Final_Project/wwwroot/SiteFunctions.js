@@ -1,6 +1,6 @@
 ﻿//var serverAddr = "http://tyhostager-final-project.azurewebsites.net/halo";
-var serverAddr = "http://localhost:50785/halo";
-var loginAddr = "http://localhost:50785/login";
+var serverAddr = "http://localhost:55066/halo";
+var loginAddr = "http://localhost:55066/login";
 
 function addPlayer() {
     $.ajax(serverAddr, {

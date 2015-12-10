@@ -8,7 +8,6 @@ namespace Final_Project.Services {
         PlayerModel Add(PlayerModel user);
         void Delete(string name);
         void Set(PlayerModel player);
-        //Dictionary<string, PlayerModel> GetAll();
         IEnumerable<PlayerModel> GetAll();
     }
 }

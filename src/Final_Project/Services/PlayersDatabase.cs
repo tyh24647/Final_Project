@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using Final_Project.Models;
-using Newtonsoft.Json;
-using System.Net;
-using System;
 
 namespace Final_Project.Services {
     public class PlayersDatabase : IPlayersDatabase {
@@ -27,12 +24,10 @@ namespace Final_Project.Services {
                 Name = "Tyler", Character = "Cortana",
                 Game = "Halo 2", Weapon = "Battle Rifle"
             };
-
             PlayerModel player2 = new PlayerModel() {
-                Name = "GENERIC_N00B", Character = "Master Chief",
+                Name = "N00B", Character = "Master Chief",
                 Game = "Halo 5", Weapon = "Needler"
             };
-
             player1.SetUpdated();
             player2.SetUpdated();
             Add(player1);
@@ -59,26 +54,9 @@ namespace Final_Project.Services {
             database[player.Name] = player;
             return player;
         }
-
-        /*
-        public PlayerModel Add(PlayerModel player) {
-            if (!database.ContainsKey(player.Name) && player != null) {
-                database[player.Name] = player;
-            }
-            return null;
-        }
-        */
         
-        ///*
         public IEnumerable<PlayerModel> GetAll() {
             return database.Values;
         }
-
-
-        /*
-        public Dictionary<string, PlayerModel> GetAll() {
-            return database;
-        }
-        */
     }
 }

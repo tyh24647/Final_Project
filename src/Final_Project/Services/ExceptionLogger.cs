@@ -8,9 +8,9 @@ namespace Final_Project.Services {
 
         private string filePath { get; set; }
 
-        private static int MAX_LOGS = 10;
+        //private static int MAX_LOGS = 10;
 
-        private int numLogFiles = 0;
+        //private int numLogFiles = 0;
 
         private static string DEFAULT_LOG_PATH = @"~/Logs/";
 

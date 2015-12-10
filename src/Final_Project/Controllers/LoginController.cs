@@ -15,19 +15,27 @@ namespace Final_Project.Controllers {
     [TypeFilter(typeof(ExceptionHandlerFilter))]
     public class LoginController : Controller {
 
-        //private UsersModel users = new UsersModel();
         private UsersModel users;
+        //private UsersModel users = new UsersModel();
         //private IPlayersDatabase database;
 
         private ISecurityProvider security;
 
+        /*
+        public LoginController(ISecurityProvider security) {
+            this.security = security;
+        }
+        */
+
+        ///*
         public LoginController(UsersModel users, ISecurityProvider security) {
             this.users = users;
             this.security = security;
         }
+        //*/
 
         [HttpPost]
-        public IActionResult Post([FromQuery]UserModel user) {
+        public IActionResult Post([FromBody]UserModel user) {
             if (users.All.ContainsKey(user.Username)) {
                 return new HttpStatusCodeResult((int)HttpStatusCode.NotFound);
             } else if (users.All[user.Username].Password.Equals(user.Password)) {
@@ -39,6 +47,13 @@ namespace Final_Project.Controllers {
             return new HttpStatusCodeResult((int)HttpStatusCode.Unauthorized);
         }
 
+        [HttpGet]
+        public string Get() {
+            var claims = new List<Claim>();
+            claims.Add(new Claim("Tyler", "Password"));
+            claims.Add(new Claim("Admin", "Test"));
+            return security.GetToken(claims);
+        }
     }
 
     public class Token {

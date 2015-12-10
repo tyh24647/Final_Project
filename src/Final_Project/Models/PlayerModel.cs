@@ -12,7 +12,8 @@ namespace Final_Project.Models {
 
         public string ETag {
             get {
-                return "\"" + this.Name + ":" + Updated.ToLongTimeString() + "\"";
+                return "\"" + Updated.ToLongTimeString() + "\"";
+                //return "\"" + this.Name + ":" + Updated.ToLongTimeString() + "\"";
             }
         }
 
